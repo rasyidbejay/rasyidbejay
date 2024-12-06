@@ -1,4 +1,4 @@
-# Hi, I'm [Your Name] 👋  
+# Hi, I'm Rashid 👋  
 
 🎓 **Final-Year BBA Student** specializing in Information Systems.  
 📊 **Data Analytics Enthusiast** passionate about uncovering insights through data.  
