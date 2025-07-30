@@ -1,8 +1,8 @@
-# Hi, I'm Rashid 👋  
+Hi, I'm Rashid 👋
 
-🎓 **Final-Year BBA Student** specializing in Information Systems.  
-📊 **Data Analytics Enthusiast** passionate about uncovering insights through data.  
-💡 Skills: Python, SQL, Power BI, Tableau, and Data Visualization.  
+💼 Business Administration Graduate with a focus on Information Systems
+📊 Data & SEO Enthusiast passionate about transforming data into strategic insights
+💡 Skilled in Python, SQL, Power BI, Tableau, and Data Visualization
 
-🚀 Check out my projects below!  
+🚀 Explore my projects below — from analytics dashboards to SEO-driven web solutions!
 
