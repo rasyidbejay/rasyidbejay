@@ -1,28 +1,61 @@
-import { useTheme } from '../context/ThemeContext'
+import { Link } from 'react-router-dom'
+import { navLinks, socials, email } from '../data/profile'
+import { useClock } from '../hooks/useClock'
+import { scrollToTop } from '../lib/lenis'
 
 export default function Footer() {
-  const { theme } = useTheme()
+  const time = useClock()
+
   return (
-    <footer style={{
-      borderTop: '1px solid var(--rb-border-subtle)',
-      background: 'var(--rb-bg)',
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '48px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      }}>
-        <img
-          src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'}
-          alt="Rashid Abdullah"
-          style={{ height: '28px', width: 'auto', objectFit: 'contain', display: 'block' }}
-        />
-        <p style={{ fontSize: '12px', color: 'var(--rb-text-tertiary)', fontFamily: "'Inter', sans-serif" }}>
-          © 2025 Rashid Abdullah
-        </p>
+    <footer className="footer wrap">
+      <div className="footer__top">
+        <Link to="/" className="footer__logo" aria-label="Rashid Abdullah, home">
+          <img src="/logo-dark.png" alt="" width="48" height="48" />
+        </Link>
+
+        <div className="footer__cols">
+          <div>
+            <p className="overline">Pages</p>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              {navLinks.map(({ to, label }) => (
+                <li key={to}>
+                  <Link to={to}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="overline">Elsewhere</p>
+            <ul>
+              {socials.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} target="_blank" rel="noreferrer">
+                    {label} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="overline">Contact</p>
+            <ul>
+              <li>
+                <a href={`mailto:${email}`}>{email}</a>
+              </li>
+              <li className="tnum">Kuala Lumpur, {time}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer__bottom">
+        <p>© {new Date().getFullYear()} Rashid Abdullah</p>
+        <button type="button" onClick={() => scrollToTop(false)} className="footer__top-btn">
+          Back to top ↑
+        </button>
       </div>
     </footer>
   )
