@@ -484,3 +484,147 @@ a.cert:hover {
     gap: var(--s-4);
   }
 }
+
+/* Discoverability: SEO, AEO, GEO */
+.found__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--s-9);
+  align-items: center;
+  margin-top: var(--s-8);
+}
+.found__list {
+  display: grid;
+  gap: var(--s-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.found__item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: var(--s-4);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rb-border);
+}
+.found__key {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--rb-text-primary);
+  padding-top: 0.2em;
+}
+.found__name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s-2);
+}
+
+/* Illustration */
+.sdiagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--rb-text-primary);
+}
+.sdiagram .sd__box rect,
+.sdiagram .sd__box path,
+.sdiagram .sd__box line,
+.sdiagram .sd__box circle {
+  stroke: currentColor;
+}
+.sdiagram .sd__box line {
+  opacity: 0.35;
+}
+.sdiagram .sd__box line.sd__strong {
+  opacity: 1;
+}
+.sdiagram .sd__fill {
+  fill: currentColor;
+  stroke: none;
+}
+.sdiagram .sd__links path {
+  stroke: var(--rb-border);
+}
+.sdiagram .sd__flow path {
+  stroke: currentColor;
+  stroke-dasharray: 0.06 0.94;
+  opacity: 0;
+}
+.sdiagram text {
+  font-family: inherit;
+  fill: var(--rb-text-secondary);
+}
+.sdiagram .sd__tag {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  fill: var(--rb-text-primary);
+}
+.sdiagram .sd__label {
+  font-size: 14px;
+}
+
+.js-motion .sdiagram .sd__links path,
+.js-motion .sdiagram .sd__box rect[pathLength],
+.js-motion .sdiagram .sd__box > path[pathLength] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.js-motion .sdiagram .sd__box > :not(rect):not(path),
+.js-motion .sdiagram text {
+  opacity: 0;
+}
+.js-motion .sdiagram.is-in .sd__links path,
+.js-motion .sdiagram.is-in .sd__box rect[pathLength],
+.js-motion .sdiagram.is-in .sd__box > path[pathLength] {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.6s var(--ease-out);
+}
+.js-motion .sdiagram.is-in .sd__box > :not(rect):not(path) {
+  opacity: 1;
+}
+.js-motion .sdiagram.is-in .sd__box line {
+  opacity: 0.35;
+}
+.js-motion .sdiagram.is-in .sd__box line.sd__strong {
+  opacity: 1;
+}
+.js-motion .sdiagram.is-in text {
+  opacity: 1;
+}
+.js-motion .sdiagram .sd__box > :not(rect):not(path),
+.js-motion .sdiagram text {
+  transition: opacity 0.8s ease 0.9s;
+}
+.js-motion .sdiagram.is-in .sd__flow path {
+  opacity: 1;
+  animation: sd-flow 3.2s linear 1.8s infinite;
+}
+.js-motion .sdiagram.is-in .sd__flow path:nth-child(2) {
+  animation-delay: 2.4s;
+}
+.js-motion .sdiagram.is-in .sd__flow path:nth-child(3) {
+  animation-delay: 3s;
+}
+@keyframes sd-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .found__grid {
+    grid-template-columns: 1fr;
+    gap: var(--s-8);
+  }
+}
+@media (max-width: 700px) {
+  .found__item {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+}
