@@ -1,0 +1,60 @@
+/* RB design tokens. Monochrome only. Light and dark are both first-class. */
+:root {
+  --rb-bg: #ffffff;
+  --rb-bg-secondary: #f5f5f7;
+  --rb-bg-tertiary: #e8e8ed;
+  --rb-text-primary: #1d1d1f;
+  --rb-text-secondary: #6e6e73;
+  --rb-text-tertiary: #aeaeb2;
+  --rb-border: #d2d2d7;
+  --rb-border-subtle: #e8e8ed;
+  --rb-accent: #1d1d1f;
+
+  --rb-radius-sm: 6px;
+  --rb-radius-md: 12px;
+  --rb-radius-lg: 18px;
+  --rb-radius-xl: 24px;
+  --rb-radius-pill: 999px;
+
+  /* 8pt spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  --gutter: clamp(24px, 4vw, 48px);
+  --nav-h: 72px;
+
+  /* Type scale. Display sizes are fluid and tight. */
+  --fs-display: clamp(64px, 15.5vw, 280px);
+  --fs-xl: clamp(56px, 11vw, 200px);
+  --fs-lg: clamp(40px, 7vw, 120px);
+  --fs-md: clamp(28px, 4vw, 64px);
+  --fs-lead: clamp(22px, 2.6vw, 40px);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --rb-bg: #000000;
+  --rb-bg-secondary: #1c1c1e;
+  --rb-bg-tertiary: #2c2c2e;
+  --rb-text-primary: #f5f5f7;
+  --rb-text-secondary: #98989d;
+  --rb-text-tertiary: #636366;
+  --rb-border: #38383a;
+  --rb-border-subtle: #2c2c2e;
+  --rb-accent: #f5f5f7;
+
+  color-scheme: dark;
+}

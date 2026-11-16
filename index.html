@@ -2,17 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+<script>
+(function () {
+  var d = document.documentElement;
+  try { if (localStorage.getItem('rb-theme') === 'dark') d.setAttribute('data-theme', 'dark'); } catch (e) {}
+  try { if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('js-motion'); } catch (e) {}
+})();
+</script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rashid Abdullah — Frontend Developer based in Kuala Lumpur. I build fast, beautiful, and accessible web experiences." />
+    <meta name="description" content="Rashid Abdullah is a frontend developer and SEO specialist in Kuala Lumpur. Sites that rank. Interfaces that convert." />
     <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
     <link rel="manifest" href="/site.webmanifest" />
-    <title>Rashid Abdullah — Frontend Developer</title>
+    <title>Rashid Abdullah | Frontend Developer &amp; SEO Specialist</title>
   </head>
   <body>
     <div id="root"></div>
