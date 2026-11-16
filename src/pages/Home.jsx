@@ -6,6 +6,7 @@ import ScrubText from '../components/ScrubText'
 import Marquee from '../components/Marquee'
 import WorkList from '../components/WorkList'
 import Counter from '../components/Counter'
+import SearchDiagram from '../components/SearchDiagram'
 import Magnetic from '../components/Magnetic'
 import PageTransition from '../components/PageTransition'
 import { projects, featuredIds } from '../data/projects'
@@ -28,14 +29,32 @@ const services = [
   {
     n: '02',
     title: 'Search',
-    text: 'Performance, tracking, and on-page work that helps sites get found.',
-    items: ['Core Web Vitals', 'Google Search Console', 'PageSpeed Insights', 'GA4'],
+    text: 'Technical and on-page work that helps sites get found in search and in AI answers.',
+    items: ['SEO', 'GEO', 'AEO', 'Core Web Vitals', 'Google Search Console', 'PageSpeed Insights', 'GA4'],
   },
   {
     n: '03',
     title: 'CMS and e-commerce',
     text: 'Custom themes, storefronts, and booking flows on the platforms your team already runs.',
     items: ['WordPress', 'Shopify', 'Webflow', 'SiteGiant', 'Elementor', 'WooCommerce'],
+  },
+]
+
+const discoverability = [
+  {
+    key: 'SEO',
+    name: 'Search engine optimisation',
+    text: 'Making a site easy for search engines to crawl, understand, and rank.',
+  },
+  {
+    key: 'AEO',
+    name: 'Answer engine optimisation',
+    text: 'Structuring content so it can be chosen as the direct answer, such as a featured snippet.',
+  },
+  {
+    key: 'GEO',
+    name: 'Generative engine optimisation',
+    text: 'Shaping content so AI assistants can understand it, trust it, and cite it.',
   },
 ]
 
@@ -135,6 +154,27 @@ export default function Home() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="section wrap found">
+        <Reveal as="p" className="overline section__label">
+          Search, answers, and AI
+        </Reveal>
+        <SplitText as="h2" className="xl" text="Built to be found." />
+        <div className="found__grid">
+          <SearchDiagram className="found__art" />
+          <ul className="found__list">
+            {discoverability.map((d) => (
+              <Reveal as="li" key={d.key} className="found__item">
+                <span className="found__key">{d.key}</span>
+                <div>
+                  <h3 className="found__name">{d.name}</h3>
+                  <p className="body">{d.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
         </div>
       </section>
 
