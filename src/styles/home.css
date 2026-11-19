@@ -314,10 +314,14 @@ a.home-row:hover .home-row__arrow {
   border-color: var(--rb-text-primary);
 }
 
-@media (max-width: 860px) {
+/* On squarer windows the stack reaches the right edge, so the rail steps aside */
+@media (max-aspect-ratio: 7/5) {
   .home-rail {
     display: none;
   }
+}
+
+@media (max-width: 860px) {
   .home-pin {
     align-items: flex-end;
     padding-bottom: 32px;
