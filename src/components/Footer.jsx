@@ -9,8 +9,10 @@ export default function Footer() {
   return (
     <footer className="footer wrap">
       <div className="footer__top">
-        <Link to="/" className="footer__logo" aria-label="Rashid Abdullah, home">
-          <img src="/logo-dark.png" alt="" width="48" height="48" />
+        <Link to="/" className="footer__logo">
+          Rashid
+          <br />
+          Abdullah
         </Link>
 
         <div className="footer__cols">

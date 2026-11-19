@@ -3,7 +3,6 @@ import PageTransition from '../components/PageTransition'
 import SplitText from '../components/SplitText'
 import Reveal from '../components/Reveal'
 import Magnetic from '../components/Magnetic'
-import ContourField from '../components/ContourField'
 import { email, phone, location, socials } from '../data/profile'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
@@ -36,8 +35,7 @@ export default function Contact() {
 
   return (
     <PageTransition>
-      <section className="page-hero page-hero--field wrap">
-        <ContourField className="page-hero__field" seed={3.7} lines={8} />
+      <section className="page-hero wrap">
         <div className="page-hero__inner">
           <Reveal as="p" trigger="load" className="overline section__label">
             Contact
