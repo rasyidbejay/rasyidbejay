@@ -4,14 +4,14 @@ import SplitText from '../components/SplitText'
 import Reveal from '../components/Reveal'
 import Parallax from '../components/Parallax'
 import Magnetic from '../components/Magnetic'
-import { projects } from '../data/projects'
+import { liveProjects } from '../data/projects'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export default function ProjectDetail() {
   const { id } = useParams()
-  const index = projects.findIndex((p) => p.id === id)
-  const project = projects[index]
-  const next = projects[(index + 1) % projects.length]
+  const index = liveProjects.findIndex((p) => p.id === id)
+  const project = liveProjects[index]
+  const next = liveProjects.length > 1 ? liveProjects[(index + 1) % liveProjects.length] : null
   useDocumentTitle(project ? project.name : 'Project not found')
 
   if (!project) {
@@ -21,7 +21,7 @@ export default function ProjectDetail() {
           <h1 className="lg">Project not found.</h1>
           <p className="lead page-hero__sub">
             <Link to="/projects" className="link">
-              ← Back to projects
+              ← Back to work
             </Link>
           </p>
         </section>
@@ -34,7 +34,7 @@ export default function ProjectDetail() {
       <section className="page-hero wrap">
         <Reveal trigger="load">
           <Link to="/projects" className="back link">
-            ← All projects
+            ← All work
           </Link>
         </Reveal>
         <Reveal as="p" trigger="load" delay={100} className="overline section__label">
@@ -64,9 +64,9 @@ export default function ProjectDetail() {
 
       <section className="wrap detail__meta">
         {[
-          ['Category', project.category],
-          ['Tools', project.tools.slice(0, 3).join(', ')],
-          ['Skills', project.skills.slice(0, 2).join(', ')],
+          ['Type', project.category],
+          ['Role', project.role],
+          ['Built with', project.tools[0]],
         ].map(([label, value]) => (
           <Reveal key={label}>
             <p className="overline">{label}</p>
@@ -93,7 +93,7 @@ export default function ProjectDetail() {
           <p className="lead detail__about">{project.about}</p>
         </Reveal>
         <Reveal delay={120} className="detail__stack">
-          <p className="overline">Tech stack</p>
+          <p className="overline">Stack and features</p>
           <ul className="tags">
             {project.tools.map((t) => (
               <li key={t} className="tag">
@@ -101,21 +101,20 @@ export default function ProjectDetail() {
               </li>
             ))}
           </ul>
-          <p className="overline">Skills</p>
-          <ul className="tags">
-            {project.skills.map((s) => (
-              <li key={s} className="tag">
-                {s}
-              </li>
-            ))}
-          </ul>
         </Reveal>
       </section>
 
-      <Link to={`/projects/${next.id}`} className="next wrap" data-cursor="Next">
-        <p className="overline">Next project</p>
-        <span className="xl next__name">{next.name} →</span>
-      </Link>
+      {next ? (
+        <Link to={`/projects/${next.id}`} className="next wrap" data-cursor="Next">
+          <p className="overline">Next project</p>
+          <span className="xl next__name">{next.name} →</span>
+        </Link>
+      ) : (
+        <Link to="/projects" className="next wrap" data-cursor="Open">
+          <p className="overline">More on the way</p>
+          <span className="xl next__name">All work →</span>
+        </Link>
+      )}
     </PageTransition>
   )
 }

@@ -206,6 +206,9 @@
 .work-row__thumb {
   display: none;
 }
+.work-row--soon .work-row__name {
+  color: var(--rb-text-tertiary);
+}
 
 .work-preview {
   position: fixed;

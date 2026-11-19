@@ -39,8 +39,8 @@ export default function Navbar() {
   return (
     <>
       <header className={`nav ${hidden && !open ? 'nav--hidden' : ''}`}>
-        <Link to="/" className="nav__logo" aria-label="Rashid Abdullah, home" data-cursor="Home">
-          <img src="/logo-dark.png" alt="" width="40" height="40" />
+        <Link to="/" className="nav__logo">
+          Rashid Abdullah
         </Link>
 
         <nav className="nav__pill" aria-label="Primary">
@@ -55,7 +55,8 @@ export default function Navbar() {
             onClick={toggleTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
-            {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+            {theme === 'dark' ? <Sun size={14} aria-hidden="true" /> : <Moon size={14} aria-hidden="true" />}
+            <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
           </button>
         </nav>
 

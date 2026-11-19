@@ -6,6 +6,24 @@ import { useInView } from '../hooks/useInView'
 function Row({ project, index, onEnter }) {
   const ref = useRef(null)
   const seen = useInView(ref, '0px 0px -8% 0px')
+  const idx = String(index + 1).padStart(2, '0')
+
+  // Placeholder: listed, not clickable, no preview.
+  if (project.soon) {
+    return (
+      <div
+        ref={ref}
+        className={`work-row work-row--soon ${seen ? 'is-in' : ''}`}
+        style={{ '--i': index }}
+        onMouseEnter={onEnter}
+      >
+        <span className="work-row__idx tnum">{idx}</span>
+        <span className="work-row__name lg">{project.name}</span>
+        <span className="work-row__meta" />
+        <span className="work-row__arrow" aria-hidden="true" />
+      </div>
+    )
+  }
 
   return (
     <Link
@@ -17,7 +35,7 @@ function Row({ project, index, onEnter }) {
       onMouseEnter={onEnter}
       onFocus={onEnter}
     >
-      <span className="work-row__idx tnum">{String(index + 1).padStart(2, '0')}</span>
+      <span className="work-row__idx tnum">{idx}</span>
       <span className="work-row__name lg">{project.name}</span>
       <span className="work-row__meta">
         <span>{project.category}</span>
@@ -70,14 +88,16 @@ export default function WorkList({ items }) {
   return (
     <div ref={list} className="work-list" onMouseLeave={() => setActive(-1)}>
       <div className="work-preview" ref={preview} data-on={active >= 0} aria-hidden="true">
-        {items.map((p, i) => (
-          <div key={p.id} className={`work-preview__item ${i === active ? 'is-active' : ''}`}>
-            {p.image ? <img src={p.image} alt="" decoding="async" /> : <span className="lg">{p.name}</span>}
-          </div>
-        ))}
+        {items.map((p, i) =>
+          p.soon ? null : (
+            <div key={p.id} className={`work-preview__item ${i === active ? 'is-active' : ''}`}>
+              {p.image ? <img src={p.image} alt="" decoding="async" /> : <span className="lg">{p.name}</span>}
+            </div>
+          ),
+        )}
       </div>
       {items.map((p, i) => (
-        <Row key={p.id} project={p} index={i} onEnter={() => setActive(i)} />
+        <Row key={p.id} project={p} index={i} onEnter={() => setActive(p.soon ? -1 : i)} />
       ))}
     </div>
   )

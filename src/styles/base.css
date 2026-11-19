@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 17px;
   line-height: 1.6;
@@ -20,7 +20,6 @@ body {
   color: var(--rb-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'cv11', 'ss03';
   transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
 }
@@ -116,25 +115,25 @@ html.lenis body {
 /* Type */
 .display {
   font-size: var(--fs-display);
-  font-weight: 700;
-  letter-spacing: -0.055em;
+  font-weight: 600;
+  letter-spacing: -0.065em;
   line-height: 0.86;
 }
 .xl {
   font-size: var(--fs-xl);
-  font-weight: 700;
-  letter-spacing: -0.05em;
+  font-weight: 600;
+  letter-spacing: -0.055em;
   line-height: 0.9;
 }
 .lg {
   font-size: var(--fs-lg);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 0.95;
 }
 .md {
   font-size: var(--fs-md);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1.02;
 }
@@ -149,10 +148,12 @@ html.lenis body {
   line-height: 1.7;
   color: var(--rb-text-secondary);
 }
-.overline {
+.overline,
+.mono {
+  font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--rb-text-secondary);
 }
@@ -200,7 +201,7 @@ html.lenis body {
 
 .scrub {
   font-size: var(--fs-md);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1.08;
 }
