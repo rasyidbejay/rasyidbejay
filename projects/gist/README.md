@@ -9,6 +9,17 @@ Calendar OAuth, S3-compatible storage, Chrome Extension (Manifest V3).
 **Size:** about 10,700 lines of TypeScript/TSX in `src/`, 39 API routes, 21 UI components, plus about 960 lines of
 test scripts.
 
+![Gist on desktop and iPhone](images/mockup-hero.webp)
+
+![Gist on three iPhones](images/mockup-phones.webp)
+
+![Light and dark themes](images/mockup-themes.webp)
+
+![Gist on a laptop and iPhone](images/mockup-laptop.webp)
+
+<details>
+<summary>Plain screenshots</summary>
+
 ![Meeting notes: summary, key points, decisions and who spoke](images/meeting-notes.webp)
 
 ![The agent answers with citations and generated files](images/agent-chat.webp)
@@ -17,6 +28,8 @@ test scripts.
   <img src="images/mobile-agent.webp" width="280" alt="Agent on mobile">
   <img src="images/mobile-meeting.webp" width="280" alt="Meeting notes on mobile">
 </p>
+
+</details>
 
 *Screenshots use the app's offline demo mode, so the AI text is sample content.*
 

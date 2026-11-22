@@ -39,6 +39,12 @@ export const projects = [
     live: null,
     github: null,
     image: '/gist.webp',
+    thumb: '/gist-thumb.webp',
+    gallery: [
+      { src: '/gist-phones.webp', alt: 'Gist on three iPhones: files, meeting notes in light mode, and the agent chat' },
+      { src: '/gist-themes.webp', alt: 'Gist dashboard in light mode behind the agent chat in dark mode' },
+      { src: '/gist-laptop.webp', alt: 'Gist agent chat on a laptop next to the chat list on an iPhone' },
+    ],
   },
   { id: 'soon-2', soon: true, name: 'Coming soon' },
   { id: 'soon-3', soon: true, name: 'Coming soon' },

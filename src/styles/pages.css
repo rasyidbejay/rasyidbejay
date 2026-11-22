@@ -81,6 +81,20 @@
 .detail__frame {
   aspect-ratio: 16 / 9;
 }
+.detail__shots {
+  display: grid;
+  gap: var(--s-5);
+}
+.shot {
+  overflow: hidden;
+  border-radius: var(--rb-radius-xl);
+  background: var(--rb-bg-secondary);
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .detail__body {
   display: grid;
   grid-template-columns: 1.4fr 1fr;

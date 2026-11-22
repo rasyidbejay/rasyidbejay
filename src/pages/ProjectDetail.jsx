@@ -76,15 +76,28 @@ export default function ProjectDetail() {
       </section>
 
       <section className="wrap detail__media">
-        <Reveal>
-          <Parallax className="detail__frame">
-            {project.image ? (
-              <img src={project.image} alt={`${project.name} preview`} decoding="async" />
-            ) : (
-              <div className="tile lg">{project.name}</div>
-            )}
-          </Parallax>
-        </Reveal>
+        {project.gallery ? (
+          // Device mockups are shown whole: no parallax overscan, which would crop their edges.
+          <div className="detail__shots">
+            {[{ src: project.image, alt: `${project.name} on desktop and iPhone` }, ...project.gallery].map((g) => (
+              <Reveal key={g.src}>
+                <div className="shot">
+                  <img src={g.src} alt={g.alt} loading="lazy" decoding="async" />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        ) : (
+          <Reveal>
+            <Parallax className="detail__frame">
+              {project.image ? (
+                <img src={project.image} alt={`${project.name} preview`} decoding="async" />
+              ) : (
+                <div className="tile lg">{project.name}</div>
+              )}
+            </Parallax>
+          </Reveal>
+        )}
       </section>
 
       <section className="wrap section detail__body">

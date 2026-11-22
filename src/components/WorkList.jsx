@@ -45,7 +45,7 @@ function Row({ project, index, onEnter }) {
         →
       </span>
       {project.image && (
-        <img className="work-row__thumb" src={project.image} alt="" loading="lazy" decoding="async" />
+        <img className="work-row__thumb" src={project.thumb || project.image} alt="" loading="lazy" decoding="async" />
       )}
     </Link>
   )
@@ -91,7 +91,7 @@ export default function WorkList({ items }) {
         {items.map((p, i) =>
           p.soon ? null : (
             <div key={p.id} className={`work-preview__item ${i === active ? 'is-active' : ''}`}>
-              {p.image ? <img src={p.image} alt="" decoding="async" /> : <span className="lg">{p.name}</span>}
+              {p.thumb || p.image ? <img src={p.thumb || p.image} alt="" decoding="async" /> : <span className="lg">{p.name}</span>}
             </div>
           ),
         )}

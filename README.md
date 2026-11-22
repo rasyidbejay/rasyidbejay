@@ -24,7 +24,7 @@ I care about clean code, great UX, and websites that work beautifully on every d
 A multi-tenant AI meeting notetaker. It records or joins calls, writes structured notes, and lets an agent answer
 questions across every meeting with citations that jump to the exact second. Next.js 16, TypeScript, Postgres.
 
-[![Gist meeting notes](projects/gist/images/meeting-notes.webp)](projects/gist/README.md)
+[![Gist on desktop and iPhone](projects/gist/images/mockup-hero.webp)](projects/gist/README.md)
 
 [Read the case study](projects/gist/README.md)
 
