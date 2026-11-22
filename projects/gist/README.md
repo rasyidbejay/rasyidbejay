@@ -31,7 +31,7 @@ test scripts.
 
 </details>
 
-*Screenshots use the app's offline demo mode, so the AI text is sample content.*
+*Screenshots come from a throwaway demo account. The meetings are synthetic spoken audio; the transcripts, notes and agent answers are real output from local Whisper and Claude.*
 
 ---
 
