@@ -17,6 +17,17 @@ I care about clean code, great UX, and websites that work beautifully on every d
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
+## Featured project
+
+### [Gist: the gist of every meeting](projects/gist/README.md)
+
+A multi-tenant AI meeting notetaker. It records or joins calls, writes structured notes, and lets an agent answer
+questions across every meeting with citations that jump to the exact second. Next.js 16, TypeScript, Postgres.
+
+[![Gist meeting notes](projects/gist/images/meeting-notes.webp)](projects/gist/README.md)
+
+[Read the case study](projects/gist/README.md)
+
 ## Links
 
 [Portfolio](https://rasyidbejay.com) · [LinkedIn](https://linkedin.com/in/rasyidbejay) · [Email](mailto:rasyidbejay@gmail.com)
